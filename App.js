@@ -1,33 +1,18 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View, Image } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from './screens/HomeScreen'
+import Avatar from './screens/Avatar'
 
 export default function App() {
+  const Stack = createNativeStackNavigator()
   return (
-    <View style={styles.container}>
-      <Text style={{ color: '#348feb', fontWeight: 'bold', fontSize: 30 }}>
-        Edit Profile
-      </Text>
-      <Image
-        source={require('./assets/profile.jpg')}
-        style={{
-          height: 150,
-          width: 150,
-          borderRadius: 150 / 2,
-          overflow: 'hidden',
-          borderWidth: 3,
-          borderColor: '#348feb'
-        }}
-      />
-      <StatusBar style='auto' />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Profile'>
+        <Stack.Screen name='Profile' component={HomeScreen} />
+        <Stack.Screen name='Edit Avatar' component={Avatar} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
