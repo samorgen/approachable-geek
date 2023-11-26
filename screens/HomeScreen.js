@@ -42,7 +42,11 @@ const HomeScreen = () => {
         />
       </View>
 
-      <ProfileInfo infoTitle={'Name'} infoValue={'Sam Morgen'} />
+      <ProfileInfo
+        infoTitle={'Name'}
+        infoValue={'Sam Morgen'}
+        viewDestination={'Edit Name'}
+      />
       <ProfileInfo infoTitle={'Phone'} infoValue={'000-000-0000'} />
       <ProfileInfo infoTitle={'Email'} infoValue={'test@test.com'} />
       <ProfileInfo

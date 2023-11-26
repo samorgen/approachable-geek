@@ -12,7 +12,13 @@ import {
 import { useNavigation } from '@react-navigation/native'
 import { IconButton } from 'react-native-paper'
 
-const ProfileInfo = ({ infoTitle, infoValue, enableMultiLine, numOfLines }) => {
+const ProfileInfo = ({
+  infoTitle,
+  infoValue,
+  enableMultiLine,
+  numOfLines,
+  viewDestination
+}) => {
   const navigation = useNavigation()
   return (
     <View style={{ width: '75%', marginTop: 20 }}>
@@ -48,7 +54,7 @@ const ProfileInfo = ({ infoTitle, infoValue, enableMultiLine, numOfLines }) => {
           />
           <IconButton
             icon='chevron-right'
-            onPress={() => navigation.navigate('Edit Avatar')}
+            onPress={() => navigation.navigate(viewDestination)}
           />
         </View>
       </View>
