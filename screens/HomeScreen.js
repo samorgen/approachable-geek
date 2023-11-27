@@ -19,6 +19,9 @@ const HomeScreen = ({ route }) => {
   const [name, setName] = useState('Sam Morgen')
   const [phone, setPhone] = useState('000-000-0000')
   const [email, setEmail] = useState('test@test.com')
+  const [bio, setBio] = useState(
+    'Hello, my name is Sam Morgen. I live in Rancho Mirage, CA. I am the type of passenger who loves to be in control of the music.'
+  )
 
   useEffect(() => {
     if (route?.params?.name) {
@@ -27,6 +30,8 @@ const HomeScreen = ({ route }) => {
       setPhone(route.params.phone)
     } else if (route?.params?.email) {
       setEmail(route.params.email)
+    } else if (route?.params?.bio) {
+      setBio(route.params.bio)
     }
   }, [route.params])
 
@@ -74,11 +79,10 @@ const HomeScreen = ({ route }) => {
       />
       <ProfileInfo
         infoTitle={'Tell us about yourself'}
-        infoValue={
-          'asdf adsf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf '
-        }
+        infoValue={bio}
         numOfLines={4}
         enableMultiLine={true}
+        viewDestination={'Edit Bio'}
       />
 
       <StatusBar style='auto' />

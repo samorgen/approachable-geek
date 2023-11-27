@@ -1,7 +1,7 @@
 import { Text, View, Image, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-const UpdateButton = ({ name, phone, email }) => {
+const UpdateButton = ({ name, phone, email, bio }) => {
   const navigation = useNavigation()
   return (
     <Pressable
@@ -18,7 +18,8 @@ const UpdateButton = ({ name, phone, email }) => {
         navigation.navigate('Profile', {
           name: name,
           phone: phone,
-          email: email
+          email: email,
+          bio: bio
         })
       }
     >

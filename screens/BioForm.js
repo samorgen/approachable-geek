@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import { Text, View, Image, Pressable, TextInput } from 'react-native'
 import UpdateButton from '../components/UpdateButton'
 
-const EmailForm = ({ route }) => {
-  const [email, setEmail] = useState(route.params.info)
+const BioForm = ({ route }) => {
+  const [bio, setBio] = useState(route.params.info)
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontWeight: 'bold', fontSize: 30 }}>
-        What's your phone number?
+        What type of passenger are you?
       </Text>
 
       <View
@@ -19,19 +19,18 @@ const EmailForm = ({ route }) => {
           minHeight: 50
         }}
       >
-        <Text style={{ color: 'gray', fontWeight: 'bold' }}>
-          Your email address
-        </Text>
         <TextInput
-          placeholder='name@email.com'
-          value={email}
-          onChangeText={setEmail}
+          placeholder='Write a little bit about yourself. Do you like chatting? Are you a
+          smoker? Do you bring pets with you? Etc.'
+          value={bio}
+          onChangeText={setBio}
+          multiline
         />
       </View>
 
-      <UpdateButton email={email} />
+      <UpdateButton bio={bio} />
     </View>
   )
 }
 
-export default EmailForm
+export default BioForm
