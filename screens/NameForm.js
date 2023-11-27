@@ -14,8 +14,23 @@ const NameForm = ({ route }) => {
   }, [])
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontWeight: 'bold', fontSize: 30 }}>
+    <View
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20
+      }}
+    >
+      <Text
+        style={{
+          fontWeight: 'bold',
+          fontSize: 30,
+          marginBottom: 10,
+          width: '90%'
+        }}
+      >
         What's your name?
       </Text>
       <View
@@ -23,15 +38,17 @@ const NameForm = ({ route }) => {
           display: 'flex',
           flexDirection: 'row',
           width: '75%',
-          justifyContent: 'space-between'
+          justifyContent: 'center'
         }}
       >
         <View
           style={{
             borderWidth: 1,
-            borderColor: 'gray',
+            borderColor: 'rgba(187, 190, 191, .5)',
             minWidth: '30%',
-            minHeight: 50
+            minHeight: 50,
+            padding: 10,
+            margin: 10
           }}
         >
           <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
@@ -47,9 +64,11 @@ const NameForm = ({ route }) => {
         <View
           style={{
             borderWidth: 1,
-            borderColor: 'gray',
+            borderColor: 'rgba(187, 190, 191, .5)',
             minWidth: '30%',
-            minHeight: 50
+            minHeight: 50,
+            padding: 10,
+            margin: 10
           }}
         >
           <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
@@ -64,7 +83,16 @@ const NameForm = ({ route }) => {
         </View>
       </View>
 
-      <UpdateButton name={`${firstName} ${lastName}`} />
+      <View
+        style={{
+          width: '80%',
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: 30
+        }}
+      >
+        <UpdateButton name={`${firstName} ${lastName}`} />
+      </View>
     </View>
   )
 }

@@ -15,7 +15,9 @@ const Avatar = () => {
         }}
       />
 
-      <UpdateButton />
+      <View style={{ width: '80%' }}>
+        <UpdateButton />
+      </View>
     </View>
   )
 }

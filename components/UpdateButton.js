@@ -11,8 +11,7 @@ const UpdateButton = ({ name, phone, email, bio }) => {
         paddingVertical: 12,
         paddingHorizontal: 32,
         elevation: 3,
-        backgroundColor: 'black',
-        width: '80%'
+        backgroundColor: 'black'
       }}
       onPress={() =>
         navigation.navigate('Profile', {
