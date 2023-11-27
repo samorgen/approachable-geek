@@ -30,30 +30,36 @@ const NameForm = ({ route }) => {
           style={{
             borderWidth: 1,
             borderColor: 'gray',
-            minWidth: 100,
+            minWidth: '30%',
             minHeight: 50
           }}
         >
-          <Text style={{ color: 'gray', fontWeight: 'bold' }}>First Name</Text>
+          <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
+            First Name
+          </Text>
           <TextInput
             placeholder='John'
             value={firstName}
             onChangeText={setFirstName}
+            style={{ fontSize: 20, fontWeight: 'bold' }}
           />
         </View>
         <View
           style={{
             borderWidth: 1,
             borderColor: 'gray',
-            minWidth: 100,
+            minWidth: '30%',
             minHeight: 50
           }}
         >
-          <Text style={{ color: 'gray', fontWeight: 'bold' }}>Last Name</Text>
+          <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
+            Last Name
+          </Text>
           <TextInput
             placeholder='Doe'
             value={lastName}
             onChangeText={setLastName}
+            style={{ fontSize: 20, fontWeight: 'bold' }}
           />
         </View>
       </View>
