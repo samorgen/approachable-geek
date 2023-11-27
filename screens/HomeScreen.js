@@ -18,12 +18,15 @@ const HomeScreen = ({ route }) => {
 
   const [name, setName] = useState('Sam Morgen')
   const [phone, setPhone] = useState('000-000-0000')
+  const [email, setEmail] = useState('test@test.com')
 
   useEffect(() => {
     if (route?.params?.name) {
       setName(route.params.name)
     } else if (route?.params?.phone) {
       setPhone(route.params.phone)
+    } else if (route?.params?.email) {
+      setEmail(route.params.email)
     }
   }, [route.params])
 
@@ -64,7 +67,11 @@ const HomeScreen = ({ route }) => {
         infoValue={phone}
         viewDestination={'Edit Phone'}
       />
-      <ProfileInfo infoTitle={'Email'} infoValue={'test@test.com'} />
+      <ProfileInfo
+        infoTitle={'Email'}
+        infoValue={email}
+        viewDestination={'Edit Email'}
+      />
       <ProfileInfo
         infoTitle={'Tell us about yourself'}
         infoValue={

@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen'
 import Avatar from './screens/Avatar'
 import NameForm from './screens/NameForm'
 import PhoneForm from './screens/PhoneForm'
+import EmailForm from './screens/EmailForm'
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Screen name='Edit Avatar' component={Avatar} />
         <Stack.Screen name='Edit Name' component={NameForm} />
         <Stack.Screen name='Edit Phone' component={PhoneForm} />
+        <Stack.Screen name='Edit Email' component={EmailForm} />
       </Stack.Navigator>
     </NavigationContainer>
   )

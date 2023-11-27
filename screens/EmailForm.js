@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Text, View, Image, Pressable, TextInput } from 'react-native'
 import UpdateButton from '../components/UpdateButton'
 
-const PhoneForm = ({ route }) => {
-  const [phone, setPhone] = useState(route.params.info)
+const EmailForm = ({ route }) => {
+  const [email, setEmail] = useState(route.params.info)
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -20,18 +20,18 @@ const PhoneForm = ({ route }) => {
         }}
       >
         <Text style={{ color: 'gray', fontWeight: 'bold' }}>
-          Your phone number
+          Your email address
         </Text>
         <TextInput
           placeholder='###-###-####'
-          value={phone}
-          onChangeText={setPhone}
+          value={email}
+          onChangeText={setEmail}
         />
       </View>
 
-      <UpdateButton phone={phone} />
+      <UpdateButton email={email} />
     </View>
   )
 }
 
-export default PhoneForm
+export default EmailForm
