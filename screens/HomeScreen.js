@@ -17,10 +17,13 @@ const HomeScreen = ({ route }) => {
   const navigation = useNavigation()
 
   const [name, setName] = useState('Sam Morgen')
+  const [phone, setPhone] = useState('000-000-0000')
 
   useEffect(() => {
     if (route?.params?.name) {
       setName(route.params.name)
+    } else if (route?.params?.phone) {
+      setPhone(route.params.phone)
     }
   }, [route.params])
 
@@ -56,7 +59,11 @@ const HomeScreen = ({ route }) => {
         infoValue={name}
         viewDestination={'Edit Name'}
       />
-      <ProfileInfo infoTitle={'Phone'} infoValue={'000-000-0000'} />
+      <ProfileInfo
+        infoTitle={'Phone'}
+        infoValue={phone}
+        viewDestination={'Edit Phone'}
+      />
       <ProfileInfo infoTitle={'Email'} infoValue={'test@test.com'} />
       <ProfileInfo
         infoTitle={'Tell us about yourself'}

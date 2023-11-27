@@ -12,6 +12,7 @@ const NameForm = ({ route }) => {
     setFirstName(tmpName[0])
     setLastName(tmpName[1])
   }, [])
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontWeight: 'bold', fontSize: 30 }}>

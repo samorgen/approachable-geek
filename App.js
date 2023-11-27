@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './screens/HomeScreen'
 import Avatar from './screens/Avatar'
 import NameForm from './screens/NameForm'
+import PhoneForm from './screens/PhoneForm'
 
 export default function App() {
   const Stack = createNativeStackNavigator()
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name='Profile' component={HomeScreen} />
         <Stack.Screen name='Edit Avatar' component={Avatar} />
         <Stack.Screen name='Edit Name' component={NameForm} />
+        <Stack.Screen name='Edit Phone' component={PhoneForm} />
       </Stack.Navigator>
     </NavigationContainer>
   )
