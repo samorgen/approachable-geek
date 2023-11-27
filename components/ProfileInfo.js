@@ -7,7 +7,8 @@ import {
   Image,
   Button,
   ImageBackground,
-  TextInput
+  TextInput,
+  Pressable
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { IconButton } from 'react-native-paper'
@@ -38,28 +39,31 @@ const ProfileInfo = ({
         >
           {infoTitle}
         </Text>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between'
-          }}
+
+        <Pressable
+          onPress={() =>
+            navigation.navigate(viewDestination, { info: infoValue })
+          }
         >
-          <TextInput
-            multiline={enableMultiLine}
-            numberOfLines={numOfLines}
-            maxLength={40}
-            //onChangeText={(text) => onChangeText(text)}
-            value={infoValue}
-            style={{ fontWeight: 'bold' }}
-          />
-          <IconButton
-            icon='chevron-right'
-            onPress={() =>
-              navigation.navigate(viewDestination, { info: infoValue })
-            }
-          />
-        </View>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between'
+            }}
+          >
+            <TextInput
+              multiline={enableMultiLine}
+              numberOfLines={numOfLines}
+              maxLength={40}
+              value={infoValue}
+              style={{ fontWeight: 'bold', maxWidth: '75%' }}
+              pointerEvents='none'
+            />
+
+            <IconButton icon='chevron-right' />
+          </View>
+        </Pressable>
       </View>
     </View>
   )
