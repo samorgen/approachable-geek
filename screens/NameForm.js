@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Text, View, Image, Pressable, TextInput } from 'react-native'
 import UpdateButton from '../components/UpdateButton'
+import { styles } from '../style'
 
 const NameForm = ({ route }) => {
   const [firstName, setFirstName] = useState('')
@@ -14,83 +15,30 @@ const NameForm = ({ route }) => {
   }, [])
 
   return (
-    <View
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 20
-      }}
-    >
-      <Text
-        style={{
-          fontWeight: 'bold',
-          fontSize: 30,
-          marginBottom: 10,
-          width: '90%'
-        }}
-      >
-        What's your name?
-      </Text>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          width: '75%',
-          justifyContent: 'center'
-        }}
-      >
-        <View
-          style={{
-            borderWidth: 1,
-            borderColor: 'rgba(187, 190, 191, .5)',
-            minWidth: '30%',
-            minHeight: 50,
-            padding: 10,
-            margin: 10
-          }}
-        >
-          <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
-            First Name
-          </Text>
+    <View style={styles.formContainer}>
+      <Text style={styles.formTitle}>What's your name?</Text>
+      <View style={styles.boxContainer}>
+        <View style={styles.nameBox}>
+          <Text style={styles.boxTitle}>First Name</Text>
           <TextInput
             placeholder='John'
             value={firstName}
             onChangeText={setFirstName}
-            style={{ fontSize: 20, fontWeight: 'bold' }}
+            style={styles.boxText}
           />
         </View>
-        <View
-          style={{
-            borderWidth: 1,
-            borderColor: 'rgba(187, 190, 191, .5)',
-            minWidth: '30%',
-            minHeight: 50,
-            padding: 10,
-            margin: 10
-          }}
-        >
-          <Text style={{ color: 'gray', fontWeight: 'bold', fontSize: 20 }}>
-            Last Name
-          </Text>
+        <View style={styles.nameBox}>
+          <Text style={styles.boxTitle}>Last Name</Text>
           <TextInput
             placeholder='Doe'
             value={lastName}
             onChangeText={setLastName}
-            style={{ fontSize: 20, fontWeight: 'bold' }}
+            style={styles.boxText}
           />
         </View>
       </View>
 
-      <View
-        style={{
-          width: '80%',
-          display: 'flex',
-          justifyContent: 'center',
-          marginTop: 30
-        }}
-      >
+      <View style={styles.updateButton}>
         <UpdateButton name={`${firstName} ${lastName}`} />
       </View>
     </View>
