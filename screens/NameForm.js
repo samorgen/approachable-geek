@@ -1,7 +1,17 @@
+import { useState, useEffect } from 'react'
 import { Text, View, Image, Pressable, TextInput } from 'react-native'
 import UpdateButton from '../components/UpdateButton'
 
-const NameForm = () => {
+const NameForm = ({ route }) => {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+
+  //Split username into fist and last name
+  useEffect(() => {
+    let tmpName = route.params.info.split(' ')
+    setFirstName(tmpName[0])
+    setLastName(tmpName[1])
+  }, [])
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontWeight: 'bold', fontSize: 30 }}>
@@ -24,7 +34,11 @@ const NameForm = () => {
           }}
         >
           <Text style={{ color: 'gray', fontWeight: 'bold' }}>First Name</Text>
-          <TextInput placeholder='John' />
+          <TextInput
+            placeholder='John'
+            value={firstName}
+            onChangeText={setFirstName}
+          />
         </View>
         <View
           style={{
@@ -35,11 +49,15 @@ const NameForm = () => {
           }}
         >
           <Text style={{ color: 'gray', fontWeight: 'bold' }}>Last Name</Text>
-          <TextInput placeholder='Doe' />
+          <TextInput
+            placeholder='Doe'
+            value={lastName}
+            onChangeText={setLastName}
+          />
         </View>
       </View>
 
-      <UpdateButton />
+      <UpdateButton name={`${firstName} ${lastName}`} />
     </View>
   )
 }

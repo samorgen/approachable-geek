@@ -8,6 +8,7 @@ import NameForm from './screens/NameForm'
 
 export default function App() {
   const Stack = createNativeStackNavigator()
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Profile'>

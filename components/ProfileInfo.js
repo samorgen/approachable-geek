@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import {
   StyleSheet,
@@ -20,6 +20,7 @@ const ProfileInfo = ({
   viewDestination
 }) => {
   const navigation = useNavigation()
+
   return (
     <View style={{ width: '75%', marginTop: 20 }}>
       <View
@@ -54,7 +55,9 @@ const ProfileInfo = ({
           />
           <IconButton
             icon='chevron-right'
-            onPress={() => navigation.navigate(viewDestination)}
+            onPress={() =>
+              navigation.navigate(viewDestination, { info: infoValue })
+            }
           />
         </View>
       </View>

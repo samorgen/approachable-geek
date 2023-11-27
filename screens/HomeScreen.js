@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import {
   StyleSheet,
@@ -13,8 +13,17 @@ import { useNavigation } from '@react-navigation/native'
 import { IconButton } from 'react-native-paper'
 import ProfileInfo from '../components/ProfileInfo'
 
-const HomeScreen = () => {
+const HomeScreen = ({ route }) => {
   const navigation = useNavigation()
+
+  const [name, setName] = useState('Sam Morgen')
+
+  useEffect(() => {
+    if (route?.params?.name) {
+      setName(route.params.name)
+    }
+  }, [route.params])
+
   return (
     <View style={styles.container}>
       <Text style={{ color: '#348feb', fontWeight: 'bold', fontSize: 30 }}>
@@ -44,7 +53,7 @@ const HomeScreen = () => {
 
       <ProfileInfo
         infoTitle={'Name'}
-        infoValue={'Sam Morgen'}
+        infoValue={name}
         viewDestination={'Edit Name'}
       />
       <ProfileInfo infoTitle={'Phone'} infoValue={'000-000-0000'} />
