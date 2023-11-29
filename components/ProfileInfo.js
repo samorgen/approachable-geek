@@ -1,15 +1,5 @@
-import React, { useState } from 'react'
-import { StatusBar } from 'expo-status-bar'
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Button,
-  ImageBackground,
-  TextInput,
-  Pressable
-} from 'react-native'
+import React from 'react'
+import { Text, View, TextInput, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { IconButton } from 'react-native-paper'
 

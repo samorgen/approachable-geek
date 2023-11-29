@@ -1,4 +1,4 @@
-import { Text, View, Image, Pressable } from 'react-native'
+import { Text, View, Image } from 'react-native'
 import UpdateButton from '../components/UpdateButton'
 
 const Avatar = () => {

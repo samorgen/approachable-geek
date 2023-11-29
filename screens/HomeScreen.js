@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StatusBar } from 'expo-status-bar'
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Button,
-  ImageBackground,
-  TextInput
-} from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { IconButton } from 'react-native-paper'
 import ProfileInfo from '../components/ProfileInfo'
@@ -37,7 +28,14 @@ const HomeScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#348feb', fontWeight: 'bold', fontSize: 30 }}>
+      <Text
+        style={{
+          color: '#348feb',
+          fontWeight: 'bold',
+          fontSize: 30,
+          marginBottom: 10
+        }}
+      >
         Edit Profile
       </Text>
       <View>
@@ -84,8 +82,6 @@ const HomeScreen = ({ route }) => {
         enableMultiLine={true}
         viewDestination={'Edit Bio'}
       />
-
-      <StatusBar style='auto' />
     </View>
   )
 }

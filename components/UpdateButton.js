@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, View, Image, Pressable } from 'react-native'
+import { Text, View, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { styles } from '../style'
 
