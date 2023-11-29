@@ -13,6 +13,7 @@ const HomeScreen = ({ route }) => {
   const [bio, setBio] = useState(
     'Hello, my name is Sam Morgen. I live in Rancho Mirage, CA. I am the type of passenger who loves to be in control of the music.'
   )
+  const [avatar, setAvatar] = useState(null)
 
   useEffect(() => {
     if (route?.params?.name) {
@@ -23,6 +24,8 @@ const HomeScreen = ({ route }) => {
       setEmail(route.params.email)
     } else if (route?.params?.bio) {
       setBio(route.params.bio)
+    } else if (route?.params?.avatar) {
+      setAvatar(route.params.avatar)
     }
   }, [route.params])
 
@@ -40,7 +43,7 @@ const HomeScreen = ({ route }) => {
       </Text>
       <View>
         <Image
-          source={require('../assets/profile.jpg')}
+          source={avatar ? { uri: avatar } : require('../assets/profile.jpg')}
           style={{
             height: 150,
             width: 150,
@@ -52,7 +55,7 @@ const HomeScreen = ({ route }) => {
         />
         <IconButton
           icon='pencil'
-          onPress={() => navigation.navigate('Edit Avatar')}
+          onPress={() => navigation.navigate('Edit Avatar', { avatar: avatar })}
           containerColor='#FFFFFF'
           iconColor='#348feb'
           mode='contained'
