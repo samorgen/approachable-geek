@@ -7,6 +7,7 @@ import ProfileInfo from '../components/ProfileInfo'
 const HomeScreen = ({ route }) => {
   const navigation = useNavigation()
 
+  //This stores profile data in place of a database
   const [name, setName] = useState('Sam Morgen')
   const [phone, setPhone] = useState('(000) 000-0000')
   const [email, setEmail] = useState('test@test.com')
@@ -15,6 +16,7 @@ const HomeScreen = ({ route }) => {
   )
   const [avatar, setAvatar] = useState(null)
 
+  //If any form is updated, this useEffect will trigger when the update button is pressed
   useEffect(() => {
     if (route?.params?.name) {
       setName(route.params.name)
