@@ -50,6 +50,14 @@ export const styles = StyleSheet.create({
     width: '80%',
     display: 'flex',
     justifyContent: 'center',
-    marginTop: 30
+    marginTop: 300
+  },
+  errorText: {
+    color: 'red',
+    margin: 'auto',
+    width: '100%',
+    textAlign: 'center',
+    marginBottom: 10,
+    fontSize: 20
   }
 })

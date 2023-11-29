@@ -17,7 +17,7 @@ const HomeScreen = ({ route }) => {
   const navigation = useNavigation()
 
   const [name, setName] = useState('Sam Morgen')
-  const [phone, setPhone] = useState('000-000-0000')
+  const [phone, setPhone] = useState('(000) 000-0000')
   const [email, setEmail] = useState('test@test.com')
   const [bio, setBio] = useState(
     'Hello, my name is Sam Morgen. I live in Rancho Mirage, CA. I am the type of passenger who loves to be in control of the music.'
