@@ -1,5 +1,11 @@
-import { useState, useEffect } from 'react'
-import { Text, View, Image, Pressable, TextInput } from 'react-native'
+import { useState } from 'react'
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableWithoutFeedback,
+  Keyboard
+} from 'react-native'
 import UpdateButton from '../components/UpdateButton'
 import { styles } from '../style'
 
@@ -25,27 +31,29 @@ const PhoneForm = ({ route }) => {
   }
 
   return (
-    <View style={styles.formContainer}>
-      <Text style={styles.formTitle}>What's your phone number?</Text>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <View style={styles.formContainer}>
+        <Text style={styles.formTitle}>What's your phone number?</Text>
 
-      <View style={styles.box}>
-        <Text style={styles.boxTitle}>Your phone number</Text>
-        <TextInput
-          placeholder='(###)###-####'
-          value={phone}
-          onChangeText={onTextChange}
-          style={styles.boxText}
-          keyboardType='phone-pad'
-          textContentType='telephoneNumber'
-          dataDetectorTypes='phoneNumber'
-          maxLength={14}
-        />
-      </View>
+        <View style={styles.box}>
+          <Text style={styles.boxTitle}>Your phone number</Text>
+          <TextInput
+            placeholder='(###)###-####'
+            value={phone}
+            onChangeText={onTextChange}
+            style={styles.boxText}
+            keyboardType='phone-pad'
+            textContentType='telephoneNumber'
+            dataDetectorTypes='phoneNumber'
+            maxLength={14}
+          />
+        </View>
 
-      <View style={styles.updateButton}>
-        <UpdateButton phone={phone} />
+        <View style={styles.updateButton}>
+          <UpdateButton phone={phone} />
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 
