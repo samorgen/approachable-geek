@@ -37,6 +37,6 @@ To use this app, go to the root folder of the project and run
    npm start
 ```
 
-The program will generate a QR code that can be scanned to open the app within Expo. The program is also accessible by opening the Expo app once the program is running and selecting the approachable-geek option.
+The program will generate a QR code that can be scanned to open the app within Expo.
 
 Note: It may take a few seconds to load all the packages the first time the project loads in Expo. If Expo becomes disconnected, shake your phone to view a menu where you will find an option to reload the page.
